@@ -1,7 +1,6 @@
-import {FlatList, Pressable, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
+import {FlatList, Image, Pressable, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
 import {images, offers} from "@/constants";
 import {Fragment} from "react";
-import {Image} from "expo-image";
 import cn from "clsx"
 import CartButton from "@/components/CartButton";
 
