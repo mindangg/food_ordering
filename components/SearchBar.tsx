@@ -1,4 +1,4 @@
-import {View, Text, TextInput, TouchableOpacity} from 'react-native'
+import {Image, TextInput, TouchableOpacity, View} from 'react-native'
 import React, {useState} from 'react'
 import {router, useLocalSearchParams} from "expo-router";
 import {images} from "@/constants";
@@ -9,7 +9,13 @@ const SearchBar = () => {
 
     const handleSearch = (text: string) => {
         setQuery(text);
-        router.setParams({ query: text });
+
+        if (!text) router.setParams({ query: undefined });
+    }
+
+    const handleSubmit = () => {
+        if (query!.trim())
+            router.setParams({ query });
     }
     return (
         <View className="searchbar">

@@ -1,12 +1,16 @@
 import {Image, Platform, Text, TouchableOpacity} from 'react-native'
 import {MenuItem} from "@/type";
 import {appwriteConfig} from "@/lib/appwrite";
+import {useEffect} from "react";
 
 const MenuCard = ({ item: { image_url, name, price }} : { item: MenuItem}) => {
     const imageUrl = `${image_url}?project=${appwriteConfig.projectId}`;
+    const test = () => {
+        console.log(imageUrl);
+    }
 
     return (
-        <TouchableOpacity className="menu-card" style={Platform.OS === 'android' ? { elevation: 10, shadowColor: '#878787'}: {}}>
+        <TouchableOpacity onPress={test} className="menu-card" style={Platform.OS === 'android' ? { elevation: 10, shadowColor: '#878787'}: {}}>
             <Image
                 source={{ uri: imageUrl }}
                 className="size-32 absolute -top-10"
