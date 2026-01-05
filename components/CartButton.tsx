@@ -1,13 +1,12 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native'
+import {Image, Text, TouchableOpacity, View} from 'react-native'
 import React from 'react'
 import {images} from "@/constants";
-// import {useCartStore} from "@/store/cart.store";
+import {useCartStore} from "@/store/cart.store";
 import {router} from "expo-router";
 
 const CartButton = () => {
-    // const { getTotalItems } = useCartStore();
-    // const totalItems = getTotalItems();
-    const totalItems = 10; // Placeholder for demonstration
+    const { getTotalItems } = useCartStore();
+    const totalItems = getTotalItems();
 
     return (
         <TouchableOpacity className="cart-btn" onPress={()=> router.push('/cart')}>
